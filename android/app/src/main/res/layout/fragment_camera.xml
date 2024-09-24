@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/camera_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/surface_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/black"
+        android:padding="0.0000001dp"
+        app:layout_anchor="@id/bottom_settings"
+        app:layout_anchorGravity="top"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:scaleType="fillStart" />
+
+        <radu.signlanguageinterpreter.views.OverlayView
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <include
+        android:id="@+id/record_button"
+        layout="@layout/record_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        app:layout_anchor="@id/surface_view_container"
+        app:layout_anchorGravity="center_horizontal|bottom" />
+
+    <View
+        android:id="@+id/transparent_view"
+        android:layout_width="64dp"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        app:layout_anchor="@id/record_button"
+        app:layout_anchorGravity="center_vertical|end"
+        app:useCompatPadding="false" />
+
+    <ImageButton
+        android:id="@+id/flip_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/flip_button"
+        android:importantForAccessibility="no"
+        android:minWidth="64dp"
+        android:minHeight="64dp"
+        app:layout_anchor="@id/transparent_view"
+        app:layout_anchorGravity="center_vertical|end" />
+
+    <include
+        android:id="@+id/bottom_settings"
+        layout="@layout/camera_bottom_settings" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

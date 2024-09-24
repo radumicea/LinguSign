@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/camera_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/surface_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/black"
+        android:padding="0.0000001dp"
+        app:layout_anchor="@id/bottom_settings"
+        app:layout_anchorGravity="top"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:scaleType="fillStart" />
+
+        <radu.signlanguageinterpreter.views.OverlayView
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/predicted_word_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#88000000"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/choices_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/predicted_word_text_view"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/choice_one_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="#88000000"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/choice_two_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="#88000000"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/choice_three_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#88000000"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/correct_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="16dp"
+            android:background="#88000000"
+            android:padding="10dp"
+            android:text="@string/correct"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/wrong_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="16dp"
+            android:background="#88000000"
+            android:padding="10dp"
+            android:text="@string/wrong"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/record_button"
+        layout="@layout/record_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        app:layout_anchor="@id/surface_view_container"
+        app:layout_anchorGravity="center_horizontal|bottom" />
+
+    <View
+        android:id="@+id/transparent_view"
+        android:layout_width="64dp"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        app:layout_anchor="@id/record_button"
+        app:layout_anchorGravity="center_vertical|end"
+        app:useCompatPadding="false" />
+
+    <ImageButton
+        android:id="@+id/flip_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/flip_button"
+        android:importantForAccessibility="no"
+        android:minWidth="64dp"
+        android:minHeight="64dp"
+        app:layout_anchor="@id/transparent_view"
+        app:layout_anchorGravity="center_vertical|end" />
+
+    <include
+        android:id="@+id/bottom_settings"
+        layout="@layout/camera_bottom_settings" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

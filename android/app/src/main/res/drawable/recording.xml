@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Outer circle with white stroke -->
+    <path
+        android:fillColor="#B3FF0000"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2"
+        android:pathData="M24,2A22,22 0,1,1 24,46A22,22 0,1,1 24,2"/>
+    <!-- Centered and slightly larger rounded-edge square -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M18.5,20 a1.5,1.5 0,0 1,1.5 -1.5 h8 a1.5,1.5 0,0 1,1.5 1.5 v8 a1.5,1.5 0,0 1,-1.5 1.5 h-8 a1.5,1.5 0,0 1,-1.5 -1.5 z"/>
+</vector>

@@ -1,0 +1,15 @@
+__pycache__/
+
+# Ignore everything
+/*
+
+# But not these files and directories
+!.gitignore
+!sign_lang.ipynb
+!/android/
+!/translate_inv/
+!/translate_inv/android/
+!/translate_inv/library/
+!/api
+!/nlp
+!/documentation

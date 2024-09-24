@@ -1,0 +1,9 @@
+<ToggleButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toggleButton"
+    android:layout_width="84dp"
+    android:layout_height="84dp"
+    android:background="@drawable/tb_selector"
+    android:minWidth="84dp"
+    android:minHeight="84dp"
+    android:textOff=""
+    android:textOn="" />
