@@ -36,7 +36,7 @@ In the second part, the **RSL to RO** module is shown. It uses the device's came
   - **RO to RSL**: *WordsRecognizer* sends spoken words to the backend, which matches them with the known vocabulary. Based on this response, the animations are created.  
   ![animation_fragment](https://github.com/user-attachments/assets/6807e60e-1d66-417e-8df1-d04a6112b427)
 
-  - **RSL to RO**: *Landmarker* extracts hand and body landmarks, while *Translator* classifies gestures into Romanian words.
+  - **RSL to RO**: *Landmarker* extracts hand and body landmarks, while *Translator* classifies gestures into Romanian words.  
   ![camera_fragment](https://github.com/user-attachments/assets/63818cc1-2484-4060-9f92-957e3c24466d)
 
 
